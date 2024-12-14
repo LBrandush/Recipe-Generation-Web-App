@@ -131,7 +131,9 @@ function showRecipe(result) {
     <div class="recipe-directions">
          <span class="directions-header">Directions:</span>
         <span class="directions-text"><p> ${result.meals[0].strInstructions}</p></span>
+        <p><button class="category" data-id="${result.meals[0].strCategory}"> View More ${result.meals[0].strCategory} Recipes</button>
     </div>
+    
  </div>`
 }
 

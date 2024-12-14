@@ -173,10 +173,10 @@ main {
     font-family: var(--headline);
     font-size: 1.75rem;
     color: var(--green);
-    padding: 0 5px;
+    padding: 10px 5px;
 }
 
-.view-more {
+.view-more, .category {
     outline: none;
     border: none;
     border-radius: 10px;
@@ -187,10 +187,10 @@ main {
     margin-top: 5px;
     cursor: pointer;
     transition: background, .3s;
-    margin: 0 0 5px 5px;
+    margin: 10px 0 5px 5px;
 }
 
-.view-more:hover {
+.view-more:hover, .category:hover {
     opacity: .8;
 }
 
