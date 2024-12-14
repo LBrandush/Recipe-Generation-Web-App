@@ -16,6 +16,7 @@ function getQuery(term) {
     })
     
     .then(displayMealResults)
+    .then(displaySearchHeadline(term))
 }
     
 window.addEventListener('DOMContentLoaded', (e) => {
@@ -24,6 +25,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     getQuery(term);
 
 });
+
+function displaySearchHeadline(term) {
+    return mainHeadline.innerHTML = `Recipes to use up your extra <span class="ingredient">${term.toLowerCase()}</span> `;
+}
 
 function displayMealResults(results) {
    
