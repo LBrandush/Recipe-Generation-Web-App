@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    
+}
+
+:root {
+    --headline: 'Abril Fatface';
+    --body: 'Poppins';
+
+
+    --yellow: #F1C40F;
+    --orange: #E94F37;
+    --black: #393E41;
+    --green: #709255;
+    --white: #FFFBFE; 
+}
+
+img {
+    width: 100%;
+}
+
+/*header styles */
+
+header {
+   height: 50vh;
+   background: linear-gradient(0deg, rgba(57, 62, 65, 0.3), rgba(57,62,65, 0.3)), url(images/bkgr3.jpg);
+   background-size:cover;
+   background-repeat: no-repeat;
+   
+   background-position: bottom;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.headline {
+    font-family: var(--headline);
+    font-size: 4rem;
+    color: var(--yellow);
+    text-shadow: 3px 3px var(--black);
+    text-align: center;
+    /*background: var(--black);*/
+    
+}
+
+.subheader {
+    font-family: var(--body);
+    font-size: 2rem;
+    
+    margin-top: 20px;
+    padding:0 5px;
+    color: var(--white);
+}
+
+.form {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+input {
+    background: var(--white);
+    width: 70%;
+    margin: 30px 15%;
+    outline: none;
+    border: none;
+    padding: 15px 20px 15px 15px;
+    border-radius: 10px;
+    font-family: var(--body);
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+.submit-btn {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    margin-left: -25%;
+    transition: color, .3s;
+}
+
+.submit-btn:hover {
+    opacity: .8;
+}
+
+.fa-arrow-circle-right {
+    color: var(--green);
+    font-size: 3rem;
+   
+}
+
+@media screen and (max-width: 625px) {
+    header {
+        height: 40vh;
+    }
+
+    .headline {
+        font-size: 3rem;
+    }
+
+    .subheader {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    input {
+        font-size: 1.25rem;
+    }
+}
+
+main {
+    background: var(--white);
+    margin-bottom: 20px;
+}
+
+
+/*body styles */
+
+.main-headline, .ingredient {
+    text-align: center;
+    margin-top: 15px;
+    font-family: var(--body);
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.ingredient {
+    font-family: var(--headline);
+    font-size: 2.5rem;
+    padding: 0px 3px;
+    background: linear-gradient(to bottom, transparent 65%, var(--yellow) 35%);
+}
+
+.recipe-container {
+    max-width: 1400px;
+    gap: 30px 10px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.recipe-card {
+   
+    border-radius: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0.25em 0.25em 0.75em rgba(57, 62, 65, .20),
+    0.125em 0.124em 0.25em rgba(57, 62, 65,.15);
+    
+    
+}
+
+.recipe-image img {
+    border-radius: 10px;
+    height: 25vh;
+    object-fit: cover;
+    
+   
+    
+}
+
+.recipe-container {
+    margin-top: 25px;
+}
+
+.title {
+    font-family: var(--headline);
+    font-size: 1.75rem;
+    color: var(--green);
+    padding: 0 5px;
+}
+
+.view-more {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background: var(--yellow);
+    font-family: var(--body);
+    font-size: 1.2rem;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: background, .3s;
+    margin: 0 0 5px 5px;
+}
+
+.view-more:hover {
+    opacity: .8;
+}
+
+@media screen and (max-width: 625px) {
+    .main-headline {
+        font-size: 1.5rem;
+    }
+
+    .ingredient {
+        font-size: 1.875rem;
+    }
+
+
+}
+
+/*RECIPE PAGE */
+
+.full-recipe-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    
+}
+
+.individual-recipe-title {
+    
+    text-align: center;
+    
+}
+
+.individual-recipe-title span {
+    font-size: 3.5rem;
+    font-family: var(--headline);
+    color: var(--black);
+    background: linear-gradient(to bottom, transparent 65%, var(--yellow) 35%);
+    display: inline-block;
+    text-transform: capitalize;
+    margin: 20px 0 20px 0;
+}
+
+.recipe-details {
+    display: flex;
+    justify-content: flex-start;
+
+    
+}
+
+.full-recipe-photo {
+    max-width: 70%;
+    object-fit: contain;
+}
+
+.full-recipe-details {
+    font-size: 2rem;
+    font-family: var(--body);
+    padding-left: 40px;
+}
+
+.recipe-category {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+}
+
+.ingredients {
+    font-size: 1.25rem;
+    font-weight: bold;
+    
+}
+
+ul li {
+    font-size: 1.25rem;
+    margin-left: 30px;
+}
+
+.recipe-directions {
+    padding-top: 30px;
+    font-family: var(--body);
+   
+}
+
+.directions-header {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.recipe-directions p {
+    font-size: 1.5rem;
+}
+
+.youtube a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--black);
+    padding-left: 10px;
+    transition: color, .3s;
+    
+}
+
+.youtube a:hover {
+    color: var(--green);
+}
+
+.fa-youtube {
+    font-size: 1.75rem;
+    color: var(--green);
+}
+
+@media screen and (max-width: 900px) {
+    .recipe-details {
+        display: block;
+    
+        
+    }
+}
