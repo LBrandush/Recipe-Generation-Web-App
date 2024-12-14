@@ -6,6 +6,7 @@ const recipeContainer = document.querySelector('.recipe-container');
 const main = document.querySelector('main');
 
 let term;
+let categoryID;
 
 function getQuery(term) {
     let url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${term}`;
@@ -13,6 +14,7 @@ function getQuery(term) {
     .then(meal => {
         return meal.json()
     })
+    
     .then(displayMealResults)
 }
     
@@ -24,10 +26,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 });
 
 function displayMealResults(results) {
-
-    
-    ingredient.innerText=term;
    
+  
     let array = results.meals;
 
     
@@ -135,8 +135,24 @@ function showRecipe(result) {
     </div>
     
  </div>`
+
+ let categoryButton = document.querySelector('.category');
+
+ categoryButton.addEventListener('click', (e) => {
+    let categoryID = e.target.dataset.id;
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryID}`)
+    .then(meal => {
+        return meal.json()
+    })
+    .then(displayCategoryHeadline(categoryID))
+    .then(displayMealResults)
+ })
+
 }
 
+function displayCategoryHeadline(categoryID) {
+   return mainHeadline.innerHTML = `Browse our <span class="ingredient">${categoryID.toLowerCase()}</span> recipes`;
+ }
 
 //pull up the search results
 
