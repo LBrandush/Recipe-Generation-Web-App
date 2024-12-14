@@ -47,6 +47,7 @@ function displayMealResults(results) {
         </div>`
         })
     } else {
+        mainHeadline.style.display="none";
         recipeContainer.innerHTML = `<div class="main-headline">Sorry! We don't have any suggestions to help you use up your ${term}. But you can always eat ice cream!`;
     }
 
